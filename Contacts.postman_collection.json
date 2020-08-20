@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "57bf024c-bbf6-42ab-9a0b-e337fe4c5805",
+		"name": "Contacts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Principal",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e9ac940e-319b-450d-8494-19b54a41b1db",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8081/whois/principal",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"whois",
+						"principal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "lanche123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "lanche",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "jeremias-pak",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "jeremias-pak123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://200.171.251.125:25565/oauth/token",
+					"protocol": "http",
+					"host": [
+						"200",
+						"171",
+						"251",
+						"125"
+					],
+					"port": "25565",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
