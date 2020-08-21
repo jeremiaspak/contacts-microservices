@@ -6,42 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Get Principal",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "e9ac940e-319b-450d-8494-19b54a41b1db",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "localhost:8081/whois/principal",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"whois",
-						"principal"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Get Token",
 			"request": {
 				"auth": {
@@ -71,29 +35,120 @@
 						},
 						{
 							"key": "username",
-							"value": "jeremias-pak",
+							"value": "ana",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "jeremias-pak123",
+							"value": "123",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://200.171.251.125:25565/oauth/token",
+					"raw": "http://localhost:25565/oauth/token",
 					"protocol": "http",
 					"host": [
-						"200",
-						"171",
-						"251",
-						"125"
+						"localhost"
 					],
 					"port": "25565",
 					"path": [
 						"oauth",
 						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Principal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "b4a9770f-bf6a-4f1c-b7bb-4f12395843f0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/whois/principal",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"whois",
+						"principal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Contacts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "b4a9770f-bf6a-4f1c-b7bb-4f12395843f0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/contact",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e6e5edb1-a195-4b9e-966a-ab86f5c76360",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"pedro\",\n    \"phone\": \"5511123123123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/contact",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"contact"
 					]
 				}
 			},
